@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Pribadi - Bagas Jeriansyah</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* Navigasi */
+        header {
+            background-color: #172554;
+            color: white;
+            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav h2 {
+            font-size: 22px;
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #93c5fd;
+        }
+
+        /* Bagian utama */
+        .hero {
+            background: linear-gradient(135deg, #dbeafe, #ffffff);
+            padding: 60px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            color: #172554;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            margin-bottom: 20px;
+            color: #475569;
+        }
+
+        .foto {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 5px 20px #00000020;
+        }
+
+        .tombol {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 7px;
+            text-decoration: none;
+        }
+
+        .tombol:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Konten */
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: white;
+            margin-bottom: 25px;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #0000000d;
+            scroll-margin-top: 90px;
+        }
+
+        section h2 {
+            color: #172554;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 8px;
+            margin-bottom: 18px;
+        }
+
+        section h3 {
+            color: #1e40af;
+            margin: 15px 0 8px;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        ul,
+        ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 7px;
+        }
+
+        /* Tabel pendidikan */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #172554;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #eff6ff;
+        }
+
+        /* Pandangan hidup */
+        blockquote {
+            background-color: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 18px;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        /* Kontak */
+        .sosial a {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            margin: 5px 5px 5px 0;
+        }
+
+        .sosial a:hover {
+            background-color: #bfdbfe;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #172554;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        footer a {
+            color: #bfdbfe;
+            text-decoration: none;
+        }
+
+        /* Tampilan HP */
+        @media (max-width: 650px) {
+            header {
+                position: static;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .foto {
+                width: 180px;
+                height: 180px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th,
+            td {
+                padding: 7px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGASI -->
+    <header id="atas">
+        <nav>
+            <h2>Personal Data</h2>
+
+            <ul>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#pendidikan">Pendidikan</a></li>
+                <li><a href="#cita-cita">Cita-cita</a></li>
+                <li><a href="#pandangan">Pandangan Hidup</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HALAMAN PEMBUKA -->
+    <div class="hero">
+        <div class="hero-content">
+            <div>
+                <p>RESUME PROFIL PRIBADI</p>
+
+                <h1>Bagas Jeriansyah</h1>
+
+                <p>
+                    Saya adalah pribadi yang memiliki semangat untuk
+                    belajar, mengembangkan kemampuan, dan meraih
+                    masa depan yang lebih baik.
+                </p>
+
+                <a href="#profil" class="tombol">
+                    Kenali Saya
+                </a>
+            </div>
+
+            <img class="foto" src="butet.jpeg" alt="Foto profil Bagas Jeriansyah" </div>
+        </div>
+
+        <main>
+
+            <!-- PROFIL PRIBADI -->
+            <section id="profil">
+                <h2>Profil Pribadi</h2>
+
+                <p>
+                    Perkenalkan, nama saya <b>Bagas Jeriansyah</b>.
+                    Saya adalah seseorang yang ingin terus belajar,
+                    memperoleh pengalaman baru, dan meningkatkan
+                    kemampuan diri. Saya percaya bahwa kerja keras,
+                    kedisiplinan, dan tanggung jawab merupakan hal
+                    penting untuk mencapai kesuksesan.
+                </p>
+
+                <h3>Informasi Pribadi</h3>
+
+                <ul>
+                    <li><b>Nama:</b> Bagas Jeriansyah</li>
+                    <li><b>Tempat, tanggal lahir:</b> Pagar Alam, 04 Januari 2007</li>
+                    <li><b>Alamat:</b> Kota Pagar Alam</li>
+                    <li><b>Status:</b> Mahasiswa</li>
+                    <li><b>Hobi:</b> Membaca, mendengarkan musik, dan berolahraga</li>
+                </ul>
+
+                <h3>Keahlian dan Minat</h3>
+
+                <ol>
+                    <li>Mampu bekerja sama dengan orang lain.</li>
+                    <li>Memiliki kemauan untuk mempelajari hal baru.</li>
+                    <li>Berusaha menyelesaikan tugas dengan baik.</li>
+                    <li>Memiliki minat untuk mengembangkan keterampilan.</li>
+                </ol>
+            </section>
+
+            <!-- PENDIDIKAN -->
+            <section id="pendidikan">
+                <h2>Riwayat Pendidikan</h2>
+
+                <p>
+                    Berikut merupakan format riwayat pendidikan
+                    yang dapat disesuaikan dengan data sebenarnya.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>No.</th>
+                        <th>Jenjang</th>
+                        <th>Nama Sekolah</th>
+                        <th>Tahun</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>SD</td>
+                        <td>SD Negeri 11 KOTA PAGAR ALAM</td>
+                        <td>2012 - 2018</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>SMP</td>
+                        <td>MTSN 1 KOTA PAGAR ALAM</td>
+                        <td>2018 - 2021</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>SMK</td>
+                        <td>SMK Negeri 2 KOTA PAGAR ALAM</td>
+                        <td>2021 - 2024</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- CITA-CITA -->
+            <section id="cita-cita">
+                <h2>Cita-cita</h2>
+
+                <p>
+                    Saya bercita-cita menjadi seseorang yang sukses,
+                    mandiri, dan mampu membanggakan keluarga.
+                    Saya ingin memiliki pekerjaan yang sesuai dengan
+                    minat dan kemampuan saya serta memberikan manfaat
+                    bagi orang lain.
+                </p>
+
+                <h3>Langkah Meraih Cita-cita</h3>
+
+                <ol>
+                    <li>Belajar dengan rajin dan tekun.</li>
+                    <li>Mengembangkan kemampuan dan keterampilan.</li>
+                    <li>Menghargai waktu serta disiplin dalam kegiatan.</li>
+                    <li>Tidak mudah menyerah ketika menghadapi kesulitan.</li>
+                    <li>Berusaha dan berdoa untuk mencapai tujuan.</li>
+                </ol>
+            </section>
+
+            <!-- PANDANGAN HIDUP -->
+            <section id="pandangan">
+                <h2>Pandangan Hidup</h2>
+
+                <blockquote>
+                    "Jangan takut mencoba hal baru, karena setiap
+                    pengalaman adalah kesempatan untuk belajar
+                    dan menjadi pribadi yang lebih baik."
+                </blockquote>
+
+                <p>
+                    Menurut saya, kesuksesan membutuhkan proses,
+                    kesabaran, dan usaha yang konsisten. Kegagalan
+                    bukanlah akhir dari segalanya, melainkan pelajaran
+                    untuk memperbaiki diri. Saya ingin menjadi pribadi
+                    yang jujur, bertanggung jawab, menghormati orang lain,
+                    dan selalu bersyukur.
+                </p>
+            </section>
+
+            <!-- KONTAK DAN MEDIA SOSIAL -->
+            <section id="kontak">
+                <h2>Kontak dan Media Sosial</h2>
+
+                <p>
+                    Berikut adalah bagian kontak yang dapat diisi
+                    dengan informasi pribadi.
+                </p>
+
+                <ul>
+                    <li>
+                        <b>Email:</b>
+                        <a href="mailto:emailkamu@example.com">
+                            muhammadbagasjeriansyah@gmail.com
+                        </a>
+                    </li>
+
+                    <li><b>Alamat:</b> Yogyakarta</li>
+                </ul>
+
+                <h3>Media Sosial</h3>
+
+                <div class="sosial">
+                    <a href="https://www.instagram.com/jerryjeriansyah_?cplk=aHQ2eDRvMGdxc2d6" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- BAGIAN BAWAH -->
+        <footer>
+            <p>&copy; 2026 Bagas Jeriansyah | Resume Pribadi</p>
+            <a href="#atas">Kembali ke Atas ↑</a>
+        </footer>
+
+</body>
+
+</html>
